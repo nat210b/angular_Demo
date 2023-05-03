@@ -1,0 +1,35 @@
+<div class="w-75 m-auto">
+    <mat-card-header mat-card-title>Book List</mat-card-header>
+    <h2 *ngIf="this.Books">All Book : {{num}} piece</h2> 
+    <h1 class="alert"*ngIf="num<=0">
+        not have any books here add some book
+    </h1>
+    <table class="w-100" *ngIf="num>0">
+        <thead>
+            <tr>
+                <th scope="col">index</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
+                <th class="text-center" scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of Books;let i = index">
+                <th>{{i+1}}</th>
+                <td>{{book.name}}</td>
+                <td>{{book.price}}</td>
+                <td>{{book.description}}</td>
+                
+                <td class="text-center">
+                    <button mat-icon-button color="accent" routerLink="/edit-book/{{book._id}}">
+                        <mat-icon>mode_edit</mat-icon>
+                    </button>&nbsp;
+                    <button mat-icon-button color="warn"(click)="delete(book._id,i)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
