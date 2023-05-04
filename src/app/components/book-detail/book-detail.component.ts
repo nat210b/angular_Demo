@@ -2,7 +2,7 @@ import { Component, NgZone } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CrudService, Book } from 'src/app/service/crud.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -13,7 +13,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class BookDetailComponent {
   getId: any;
-  update_book={name:'',price:'',description:''};
+  update_book = { name: '', price: '', description: '' };
 
 
   constructor(
@@ -27,30 +27,34 @@ export class BookDetailComponent {
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.crudService.GetBook(this.getId).subscribe((res: Book) => {
-      this.update_book={
-        name:res.name,
-        price:res.price,
-        description:res.description
-      }
-    });
-
-    this.update_book={
-      name:'',
-      price:'',
-      description:''
-    }
+      console.log(this.getId)
+      this.update_book={name:res.name,price:res.price,description:res.description}
+    })
+    this.update_book = {name: '', price: '', description: '' };
   }
-  openSnackBar() {
-    this._snackBar.open("Data Updated","Close");
+  UpdateSnackBar() {
+    this._snackBar.open("Data Updated", "Close");
+  }
+  DeleteSnackBar() {
+    this._snackBar.open("Data Deleted", "OK");
   }
   onUpdate() {
     this.crudService.updateBook(this.getId, this.update_book)
       .subscribe(() => {
-        this.openSnackBar()
+        this.UpdateSnackBar()
         console.log("Data updated");
         this.ngZone.run(() => this.router.navigateByUrl('/books-list'));
       }, (err) => {
         console.log(err);
       });
   }
+  delete(id: any) {
+    console.log(id)
+    if (window.confirm("Delete?")) {
+      this.crudService.DeleteBook(id).subscribe((res) => {
+        this.DeleteSnackBar()
+      })
+    }
+  }
+  
 }

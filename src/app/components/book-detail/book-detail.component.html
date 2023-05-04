@@ -1,26 +1,33 @@
-<div class="container mt-3">
-    <h1>Update Book</h1>
-    
-    <div class="row justify-content-center mt-3">
-        <div class="col-md-10">
-            <form #f="ngForm" (ngSubmit)="onUpdate()">
-                <mat-form-field class="example-full-width">
-                    <mat-label>Name</mat-label>
-                    <input matInput type="text" name="name" [(ngModel)]="update_book.name"required>
-                  </mat-form-field>
-                  <mat-form-field class="example-full-width">
-                    <mat-label>Price</mat-label>
-                    <input matInput type="number" name="price" placeholder="299$" [(ngModel)]="update_book.price" required>
-                  </mat-form-field>
-                  <mat-form-field class="example-full-width">
-                    <mat-label>Description</mat-label>
-                    <textarea matInput type="text" class="mt-3" placeholder="Descripe about this book" maxlength="100"
+<div class="w-100 m-auto">
+    <h1>Update Book:{{update_book.name}}</h1>
+    <div>
+        <form #f="ngForm" (ngSubmit)="onUpdate()" class="w-25 m-auto">
+            <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" name="name" [(ngModel)]="update_book.name" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Price</mat-label>
+                <input matInput type="number" name="price" placeholder="299$" [(ngModel)]="update_book.price" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Description</mat-label>
+                <textarea matInput type="text" class="mt-3" placeholder="Descripe about this book" maxlength="100"
                     rows="3" cols="60" [(ngModel)]="update_book.description" name="description" required></textarea>
-                  </mat-form-field>
-                <div class="form-group mt-2">
-                    <button class="btn btn-primary btn-block" type="submit">Update</button>
-                </div>
-            </form>
-        </div>
+            </mat-form-field>
+            <p align="center">
+                <mat-card-actions align="end" >
+                    <button mat-flat-button color="primary" type="submit" matTooltip="Update this book"
+                        aria-label="Button that displays a tooltip when focused or hovered over">Update</button>
+                        &nbsp;
+                    <button mat-flat-button color="accent" routerLinkActive="active" routerLink="/"
+                        matTooltip="Go back to MainPage"
+                        aria-label="Button that displays a tooltip when focused or hovered over"> Cancel </button>
+                        &nbsp;
+                    <button mat-flat-button color="warn" (click)="delete(this.getId)" matTooltip="Delete Book"
+                        aria-label="Button that displays a tooltip when focused or hovered over" > Delete </button>
+                </mat-card-actions>
+            </p>
+        </form>
     </div>
 </div>

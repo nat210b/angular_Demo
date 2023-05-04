@@ -2,6 +2,7 @@ import { Component,OnInit,NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import {CrudService } from 'src/app/service/crud.service';
 import {Validators,FormBuilder,FormControl, NgModel, NgModelGroup} from '@angular/forms'
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-addbook',
@@ -13,6 +14,7 @@ export class AddbookComponent implements OnInit {
   book={name:'',price:'',description:''};
   //BookForm:FormGroup;
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  
  
 
   constructor(
@@ -20,7 +22,7 @@ export class AddbookComponent implements OnInit {
     private router:Router,
     private ngZone: NgZone,
     private crudService:CrudService,
-    
+    private _snackBar: MatSnackBar
   ){
     
     // this.BookForm=this.formBuilder.group({
@@ -31,6 +33,9 @@ export class AddbookComponent implements OnInit {
   }
   ngOnInit(): void{
 
+  }
+  openSnackBar() {
+    this._snackBar.open("Please Enter the data","Got it!");
   }
   // onFileSelected(event: Event): void {
   //   console.log("file Selected");
@@ -46,6 +51,7 @@ export class AddbookComponent implements OnInit {
   //   }
   // }
 
+
   onSubmit():any{
     if(this.book.name&&this.book.price&&this.book.description!=''){
       console.log("this.book : ", this.book);
@@ -58,7 +64,8 @@ export class AddbookComponent implements OnInit {
       console.log(err);
     })
     }else{
-      window.alert("Please Enter the documents")
+      this.openSnackBar()
+      
     }
   }
 }

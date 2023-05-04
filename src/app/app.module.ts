@@ -24,6 +24,8 @@ import { UploadfileComponent } from './components/uploadfile/uploadfile.componen
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -55,6 +57,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatSidenavModule,
     MatSnackBarModule,
     MatFormFieldModule,
+    MatGridListModule,
+    MatTooltipModule
 
   ],
   providers: [],
