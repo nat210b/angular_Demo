@@ -1,0 +1,113 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "name": "adminUser",
+      "password": "1234",
+      "email": "nat@gg.com",
+      "gender": "male",
+      "role": "staff",
+      "isactive": true
+    },
+    {
+      "id": "2",
+      "name": "adminUser",
+      "password": "1234",
+      "email": "nat@gg.com",
+      "gender": "male",
+      "role": "staff",
+      "isactive": true
+    },
+    {
+      "id": "3",
+      "name": "adminUser",
+      "password": "1234",
+      "email": "nat@gg.com",
+      "gender": "male",
+      "role": "staff",
+      "isactive": true
+    },
+    {
+      "id": "4",
+      "name": "adminUser",
+      "password": "1234",
+      "email": "nat@gg.com",
+      "gender": "male",
+      "role": "quality",
+      "isactive": true
+    },
+    {
+      "id": "admin",
+      "name": "adminUser",
+      "password": "1234",
+      "email": "nat@gg.com",
+      "gender": "male",
+      "role": "admin",
+      "isactive": 0
+    },
+    {
+      "id": "admin",
+      "name": "adminUser",
+      "password": "1234",
+      "email": "nat@gg.com",
+      "gender": "male",
+      "role": "admin",
+      "isactive": 0
+    },
+    {
+      "id": 2,
+      "name": "",
+      "password": "",
+      "email": "",
+      "gender": "male",
+      "role": "quality",
+      "isactive": true
+    },
+    {
+      "id": 3,
+      "name": "",
+      "password": "",
+      "email": "",
+      "gender": "male",
+      "role": "staff",
+      "isactive": false
+    },
+    {
+      "id": 4,
+      "name": "",
+      "password": "",
+      "email": "",
+      "gender": "male",
+      "role": "",
+      "isactive": true
+    },
+    {
+      "id": 5,
+      "name": "",
+      "password": "",
+      "email": "",
+      "gender": "male",
+      "role": "staff",
+      "isactive": true
+    },
+    {
+      "id": "natty",
+      "name": "a",
+      "password": "1234",
+      "email": "n@g.com",
+      "gender": "male",
+      "role": "",
+      "isactive": true
+    }
+  ],
+  "role": [
+    {
+      "code": "staff",
+      "name": "Staff"
+    },
+    {
+      "code": "quality",
+      "name": "Quality"
+    }
+  ]
+}

@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import { catchError,map } from 'rxjs/operators';
-import { Observable,throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient,HttpHeaders,HttpErrorResponse } from '@angular/common/http';
 
 export class Book{
   name:string='';
   price:string='';
   description:string='';
+}
+export class User{
+  name:string='';
+  dob:string='';
+  email:string='';
 }
 @Injectable({
   providedIn: 'root'
@@ -25,6 +30,12 @@ export class CrudService {
       .pipe(
         catchError(this.handleError)
       )
+  }
+  AddUser(data: User): Observable<any> {
+    let API_URL = `${this.REST_API}/sign-up`;
+    return this.httpClient.post(API_URL, data).pipe(
+      catchError(this.handleError)
+    );
   }
   
 //get all obj

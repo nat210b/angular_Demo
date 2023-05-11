@@ -1,19 +1,22 @@
-<mat-toolbar color="primary"class="mb-3">
-        <mat-card-title>AngularCRUD Demo</mat-card-title>
-        <span class="example-spacer"></span>
-        <button mat-raised-button routerLinkActive="active" routerLink="/books-list">
-            All Books</button>&nbsp;
-        <button mat-raised-button color="accent" routerLinkActive="active" routerLink="/add-book">
-            Add Book</button>&nbsp;
-        <button mat-raised-button routerLinkActive="active" routerLink="/add-doc" disabled>
-            addImage</button>&nbsp;
-        <button mat-raised-button color="accent" routerLinkActive="active" routerLink="/login" disabled>
-            Login</button>&nbsp;
-        <button mat-raised-button color="accent" routerLinkActive="active" routerLink="/sign-up" disabled>
-            Register</button>
-    </mat-toolbar>
-    <!-- Display web -->
+<mat-toolbar color="primary" content="width=device-width, initial-scale=1">
+    <mat-card-title>AngularCRUD Demo</mat-card-title>
+    <span class="example-spacer"></span>
+    <button mat-raised-button routerLinkActive="active" routerLink="/books-list">
+        All Books</button>&nbsp;
+    <button mat-raised-button color="accent" routerLinkActive="active" routerLink="/add-book">
+        Add Book</button>&nbsp;
+    <button mat-raised-button routerLinkActive="active" routerLink="/add-doc" disabled>
+        addImage</button>&nbsp;
+    <button mat-raised-button color="accent" routerLinkActive="active" routerLink="/login">
+        Login</button>&nbsp;
+    <button mat-raised-button color="accent" routerLinkActive="active" routerLink="/sign-up">
+        Register</button>
+    <button mat-raised-button color="accent" routerLinkActive="active" routerLink="/userlisting">
+        All User</button>
+</mat-toolbar>
+<!-- Display web -->
 <router-outlet></router-outlet>
-<mat-toolbar color=""class="mt-3">
+
+<mat-toolbar>
     <span class="center">This is footer</span>
 </mat-toolbar>

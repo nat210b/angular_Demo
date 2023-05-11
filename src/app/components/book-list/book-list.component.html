@@ -1,4 +1,4 @@
-<div class="w-75 m-auto">
+<div class="w-75 m-auto p-2 "content="width=device-width">
     <mat-card-header mat-card-title>Book List</mat-card-header>
     <h2 *ngIf="this.Books">We have {{num}} Books in Database</h2>
     <h1 class="alert" *ngIf="num<=0">
@@ -7,7 +7,7 @@
     <table class="w-100" *ngIf="num>0">
         <thead>
             <tr>
-                <!-- <th scope="">id</th> -->
+                <th scope="">id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Price</th>
                 <th scope="col">Description</th>
@@ -15,9 +15,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let book of Books;let i = index">
-                <!-- <td>{{book._id}}</td> -->
-              <a mat-button href="/edit-book/{{book._id}}" class="left w-100">{{book.name}}</a>
-                <td class="border">{{book.price}}</td>
+                <td class="border">{{book._id}}</td>
+              <button routerLink="/edit-book/{{book._id}}" mat-stroked-button class="left w-100">
+                {{book.name}}
+            </button>
+                <td class="border">{{book.price}} ฿</td>
                 <td class="border">{{book.description}}
                     <!-- <mat-grid-list cols="2" rowHeight="2:0.5">
                         <mat-grid-tile> </mat-grid-tile>

@@ -21,11 +21,22 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { UploadfileComponent } from './components/uploadfile/uploadfile.component';
-import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSelectModule} from '@angular/material/select';
+import { AdminComponent } from './components/admin/admin.component';
+import {ToastrModule} from 'ngx-toastr';
+import { LoginComponent } from './components/login/login.component';
+import { UserlistingComponent } from './components/userlisting/userlisting.component';
+import { UpdatepopupComponent } from './components/updatepopup/updatepopup.component';
+import { HomeComponent } from './components/home/home.component'
+import {MatRadioModule} from '@angular/material/radio';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -35,8 +46,12 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     BookDetailComponent,
     BookListComponent,
     UploadfileComponent,
-    LoginComponent,
     RegisterComponent,
+    AdminComponent,
+    LoginComponent,
+    UserlistingComponent,
+    UpdatepopupComponent,
+    HomeComponent,
     
   ],
   imports: [
@@ -58,7 +73,14 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatSnackBarModule,
     MatFormFieldModule,
     MatGridListModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSelectModule,
+    ToastrModule.forRoot(),
+    MatRadioModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatDialogModule,
+    MatCheckboxModule
 
   ],
   providers: [],

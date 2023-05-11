@@ -1,7 +1,11 @@
 <div class="w-100 m-auto">
-    <h1>Update Book:{{update_book.name}}</h1>
+    <div class="text-center">
+        <h1 >Update Book</h1>
+        <h2 class="text-primary">Book Name: {{update_book.name}}</h2>
+    </div>
+        
     <div>
-        <form #f="ngForm" (ngSubmit)="onUpdate()" class="w-25 m-auto">
+        <form #f="ngForm" (ngSubmit)="onUpdate()" class="w-75 m-auto">
             <mat-form-field class="example-full-width">
                 <mat-label>Name</mat-label>
                 <input matInput type="text" name="name" [(ngModel)]="update_book.name" required>

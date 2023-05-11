@@ -13,12 +13,11 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class AddbookComponent implements OnInit {
   book={name:'',price:'',description:''};
   //BookForm:FormGroup;
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  
+  // emailFormControl = new FormControl('', [Validators.required, Validators.email]);
  
 
   constructor(
-    public formBuilder:FormBuilder,
+    //public formBuilder:FormBuilder,
     private router:Router,
     private ngZone: NgZone,
     private crudService:CrudService,

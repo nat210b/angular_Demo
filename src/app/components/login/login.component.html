@@ -1,25 +1,22 @@
-<mat-card mat-card-contents>
-    <div class="text-center m-auto p-3">
-        <h1>Login</h1>
-        <h2>Email & password</h2>
-        <mat-card>
-            <form action="">
-                <mat-form-field appearance="fill">
-                    <input matInput placeholder="email" name="email" [(ngModel)]="email" required>
-
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <input matInput type="password" id="password" required>
-                </mat-form-field>
-            </form>
-            <mat-card mat-card-actions class="button">
-                <button mat-flat-button color="primary" type="submit">login</button>
-                <button mat-button disabled type="submit">Forgot password</button>
-            </mat-card>
-        </mat-card>
-
-
-    </div>
-
-
-</mat-card>
+<mat-card>
+    <mat-card-header>
+      <h1> User Login</h1>
+    </mat-card-header>
+    <mat-card-content>
+      <form action="" [formGroup]="loginform" (ngSubmit)="proceedlogin()">
+        <mat-form-field>
+          <mat-label> User name</mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>password</mat-label>
+          <input matInput type="password" formControlName="password">
+        </mat-form-field>
+        <div>
+          <button mat-raised-button color="primary">Login</button>
+          <button mat-raised-button routerLink="/login" color="warn">Cancel</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+    

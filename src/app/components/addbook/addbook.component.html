@@ -1,7 +1,7 @@
-<!-- <mat-card mat-card-content > -->
-<h1 class="center text-center text-primary mt-2">Add Book</h1>
-<div>
-  <form (ngSubmit)="onSubmit()" class="w-25 m-auto">
+<mat-card mat-card-content content="width=device-width, initial-scale=1.0">
+<h1 class="text-center text-primary mt-2">Add Book</h1>
+<div class="card">
+  <form (ngSubmit)="onSubmit()" >
     <mat-form-field class="example-full-width">
       <mat-label>Name</mat-label>
       <input matInput type="text" name="name" [(ngModel)]="book.name" required>
@@ -9,8 +9,9 @@
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Price</mat-label>
-      <input matInput type="number" name="price" placeholder="299$" [(ngModel)]="book.price" required>
+      <input matInput type="number" name="price" placeholder="299" [(ngModel)]="book.price" required>
       <mat-error *ngIf="book.price==''||book.price =='e'">plese enter the price</mat-error>
+      <span matTextSuffix>฿</span>
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Description</mat-label>
@@ -19,11 +20,12 @@
     </mat-form-field>
 
     <mat-card-actions align="end">
-      <button mat-raised-button color="primary" type="submit"><mat-icon>add</mat-icon> Add</button>
+      <button mat-raised-button color="primary" type="submit"><mat-icon>add</mat-icon>Add</button>
     </mat-card-actions>
   </form>
 </div>
-<!-- </mat-card> -->
+
+</mat-card>
 
 
 
